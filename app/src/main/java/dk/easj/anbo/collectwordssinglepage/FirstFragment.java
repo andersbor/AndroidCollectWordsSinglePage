@@ -34,8 +34,19 @@ public class FirstFragment extends Fragment {
 
         binding.clearButton.setOnClickListener(view1 -> model.getWords().clear());
 
-        binding.showButton.setOnClickListener(view12 -> NavHostFragment.findNavController(FirstFragment.this)
-                .navigate(R.id.action_FirstFragment_to_SecondFragment));
+        binding.showButtonUseViewModel.setOnClickListener(view12 ->
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment));
+
+        binding.showButtonPassBundle.setOnClickListener(view1 -> {
+                    // https://developer.android.com/guide/navigation/navigation-pass-data#bundle
+                    Bundle bundle = new Bundle();
+                    bundle.putStringArrayList(ShowUsingBundleFragment.WORDS, model.getWords());
+                    // TODO messy to use ViewModel to hold the data !?
+                    NavHostFragment.findNavController(FirstFragment.this)
+                            .navigate(R.id.action_FirstFragment_to_showUsingBundleFragment, bundle);
+                }
+        );
     }
 
     @Override
@@ -43,6 +54,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
 }

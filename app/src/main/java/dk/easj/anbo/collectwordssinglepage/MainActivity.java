@@ -1,19 +1,16 @@
 package dk.easj.anbo.collectwordssinglepage;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import dk.easj.anbo.collectwordssinglepage.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        ViewModelProvider viewModelProvider = new ViewModelProvider(this);
-        WordsViewModel model = viewModelProvider.get(WordsViewModel.class);
+        //ViewModelProvider viewModelProvider = new ViewModelProvider(this);
+        //WordsViewModel model = viewModelProvider.get(WordsViewModel.class);
     }
 
     @Override
@@ -59,11 +56,12 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_show) {
+            //Log.d("Apple", "Main: action_settings");
+            // https://stackoverflow.com/questions/53902494/navigation-component-cannot-find-navcontroller
+            Navigation.findNavController(this, R.id.nav_host_fragment_content_main).navigate(R.id.SecondFragment);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

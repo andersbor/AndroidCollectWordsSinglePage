@@ -10,14 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import dk.easj.anbo.collectwordssinglepage.databinding.FragmentSecondBinding;
+import dk.easj.anbo.collectwordssinglepage.databinding.FragmentShowUsingViewModelBinding;
 
-public class SecondFragment extends Fragment {
-    private FragmentSecondBinding binding;
+public class ShowUsingViewModelFragment extends Fragment {
+    private FragmentShowUsingViewModelBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentShowUsingViewModelBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -28,7 +28,7 @@ public class SecondFragment extends Fragment {
 
         binding.textviewSecond.setText(viewModel.getWords().toString());
 
-        binding.buttonSecond.setOnClickListener(view1 -> NavHostFragment.findNavController(SecondFragment.this)
+        binding.buttonSecond.setOnClickListener(view1 -> NavHostFragment.findNavController(ShowUsingViewModelFragment.this)
                 .navigate(R.id.action_SecondFragment_to_FirstFragment));
     }
 

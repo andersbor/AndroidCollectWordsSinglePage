@@ -3,16 +3,15 @@ package dk.easj.anbo.collectwordssinglepage;
 import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class WordsViewModel extends ViewModel {
-    private List<String> words = new ArrayList<>();
+    private ArrayList<String> words = new ArrayList<>();
 
-    public List<String> getWords() {
+    public ArrayList<String> getWords() {
         return words;
     }
 
-    public void setWords(List<String> words) {
+    public void setWords(ArrayList<String> words) {
         this.words = words;
     }
 }

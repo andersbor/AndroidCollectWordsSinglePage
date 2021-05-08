@@ -13,15 +13,24 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_showUsingBundleFragment"
+            app:destination="@id/showUsingBundleFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="dk.easj.anbo.collectwordssinglepage.SecondFragment"
+        android:name="dk.easj.anbo.collectwordssinglepage.ShowUsingViewModelFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_show_using_view_model">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/showUsingBundleFragment"
+        android:name="dk.easj.anbo.collectwordssinglepage.ShowUsingBundleFragment"
+        android:label="Show (using bundle)"
+        tools:layout="@layout/fragment_show_using_bundle" />
 </navigation>
