@@ -18,11 +18,7 @@
             app:destination="@id/showUsingBundleFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_showUsingDestinationArguments"
-            app:destination="@id/showUsingDestinationArguments">
-            <argument
-                android:name="myArg"
-                android:defaultValue="1"
-                app:argType="integer" />
+            app:destination="@id/showUsingSafeArgs">
         </action>
     </fragment>
     <fragment
@@ -42,10 +38,10 @@
         android:label="Show (using bundle)"
         tools:layout="@layout/fragment_show_using_bundle" />
     <fragment
-        android:id="@+id/showUsingDestinationArguments"
-        android:name="dk.easj.anbo.collectwordssinglepage.ShowUsingDestinationArguments"
-        android:label="fragment_show_using_destination_arguments"
-        tools:layout="@layout/fragment_show_using_destination_arguments">
+        android:id="@+id/showUsingSafeArgs"
+        android:name="dk.easj.anbo.collectwordssinglepage.ShowUsingSafeArgumentsFragment"
+        android:label="Show using safe args"
+        tools:layout="@layout/fragment_show_using_safe_arguments">
         <argument
             android:name="words"
             app:argType="string[]" />

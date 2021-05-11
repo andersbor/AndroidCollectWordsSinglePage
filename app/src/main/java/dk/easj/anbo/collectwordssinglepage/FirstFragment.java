@@ -50,6 +50,7 @@ public class FirstFragment extends Fragment {
 
         binding.showButtonUseDestinationArguments.setOnClickListener(view1 -> {
             String[] words = model.getWords().toArray(new String[0]);
+            // generated classes in \CollectWordsSinglePage\app\build\generated\source\navigation-args\debug\dk\easj\anbo\collectwordssinglepage
             FirstFragmentDirections.ActionFirstFragmentToShowUsingDestinationArguments action =
                     FirstFragmentDirections.actionFirstFragmentToShowUsingDestinationArguments(words);
             NavHostFragment.findNavController(FirstFragment.this)
