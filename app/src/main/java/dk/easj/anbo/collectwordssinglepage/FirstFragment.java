@@ -47,6 +47,15 @@ public class FirstFragment extends Fragment {
                             .navigate(R.id.action_FirstFragment_to_showUsingBundleFragment, bundle);
                 }
         );
+
+        binding.showButtonUseDestinationArguments.setOnClickListener(view1 -> {
+            String[] words = model.getWords().toArray(new String[0]);
+            FirstFragmentDirections.ActionFirstFragmentToShowUsingDestinationArguments action =
+                    FirstFragmentDirections.actionFirstFragmentToShowUsingDestinationArguments(words);
+            NavHostFragment.findNavController(FirstFragment.this)
+                    //.navigate(R.id.action_FirstFragment_to_showUsingDestinationArguments);
+                    .navigate(action);
+        });
     }
 
     @Override

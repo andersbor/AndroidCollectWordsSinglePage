@@ -16,6 +16,14 @@
         <action
             android:id="@+id/action_FirstFragment_to_showUsingBundleFragment"
             app:destination="@id/showUsingBundleFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_showUsingDestinationArguments"
+            app:destination="@id/showUsingDestinationArguments">
+            <argument
+                android:name="myArg"
+                android:defaultValue="1"
+                app:argType="integer" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -33,4 +41,13 @@
         android:name="dk.easj.anbo.collectwordssinglepage.ShowUsingBundleFragment"
         android:label="Show (using bundle)"
         tools:layout="@layout/fragment_show_using_bundle" />
+    <fragment
+        android:id="@+id/showUsingDestinationArguments"
+        android:name="dk.easj.anbo.collectwordssinglepage.ShowUsingDestinationArguments"
+        android:label="fragment_show_using_destination_arguments"
+        tools:layout="@layout/fragment_show_using_destination_arguments">
+        <argument
+            android:name="words"
+            app:argType="string[]" />
+    </fragment>
 </navigation>
